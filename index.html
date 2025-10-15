@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- Add Tesseract.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Digital Wallet</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <!-- User Greeting and Balance -->
+            <span class="navbar-text me-3" id="userGreeting">Guest account</span>
+            <span class="navbar-text me-3" id="userBalance">No balance</span>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Digital Wallet</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Sign up/Log in or Log out Button -->
+                    <a id="authButton" class="nav-link" href="authenticate.html">Sign up/Log in</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container my-4">
+    <h2>Digital Wallet</h2>
+    
+    <!-- Add New Item Form -->
+    <div class="card mb-4">
+        <div class="card-header">Add Item</div>
+        <div class="card-body">
+            <form id="addItemForm">
+                <div class="form-group">
+                    <label for="itemType">Item Type</label>
+                    <select class="form-control" id="itemType">
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="license">Driver’s License</option>
+                        <option value="ticket">Event Ticket</option>
+                        <option value="pass">Boarding Pass</option>
+                        <option value="password">Website Password</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" class="form-control" id="itemName" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemDetails">Details</label>
+                    <input type="text" class="form-control" id="itemDetails" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemImage">Upload Image</label>
+                    <input type="file" class="form-control-file" id="itemImage">
+                </div>
+                <!-- Autofill button for extracting text from the uploaded image -->
+                <button type="button" class="btn btn-secondary" id="autofillButton">Autofill</button>
+                <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Wallet Items Display -->
+    <div>
+        <h4>My Items</h4>
+        <div id="walletItems" class="list-group">
+            <!-- JavaScript will populate items here -->
+        </div>
+    </div>
+
+    <!-- Modal for showing large image -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <img id="largeImage" src="" alt="Large preview" class="img-fluid">
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="categoryFilter">Filter by Category</label>
+      <select class="form-control" id="categoryFilter" onchange="filterItemsByCategory()">
+          <option value="">All</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="license">Driver’s License</option>
+          <option value="ticket">Event Ticket</option>
+          <option value="pass">Boarding Pass</option>
+          <option value="password">Website Password</option>
+      </select>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

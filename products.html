@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <style>
+    .product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 200px;  /* Set the card width to 250px */
+  height: 100%;  /* Let the card grow with content */
+  margin: 0; /* Optional: Center the card horizontally */
+  border-radius: 20px;
+}
+
+.product-card img {
+  width: 100%;  /* Make the image take the full width of the card */
+  height: 250px;  /* Set a fixed height for the image */
+  object-fit: cover;  /* Ensure the image covers the space without distortion */
+}
+
+.card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-indicator {
+  font-size: 1rem;
+  padding: 0 10px;
+}
+    .cart-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+   
+    .cart-button .badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 5px;
+      font-size: 12px;
+    }
+
+    .product-card {
+    margin-bottom: 10px; /* Adjust if necessary */
+}
+
+/* Ensure the cards fill the column evenly */
+.col-md-4 {
+    padding: 0;
+}
+
+/* Control margin between the row elements if needed */
+.row.no-gutters {
+    margin-right: 00px;
+    margin-left: 0%;
+}
+
+/* Optional: Adjust padding in card image if needed */
+.card-img-top {
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+ 
+  </style>
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Digital Wallet</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <!-- User Greeting and Balance -->
+            <span class="navbar-text me-3" id="userGreeting">Guest account</span>
+            <span class="navbar-text me-3" id="userBalance">No balance</span>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Digital Wallet</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Sign up/Log in or Log out Button -->
+                    <a id="authButton" class="nav-link" href="authenticate.html">Sign up/Log in</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container my-5">
+        <h1 class="mb-4">Products</h1>
+        <div class="row no-gutters">
+            <!-- Product 1 - Burger -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/1.jpg" alt="Product 1" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheddar Royale Burger</h5>
+                        <p class="card-text">₹830</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 - Burger -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/2.jpg" alt="Product 2" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Spicy BBQ Burger</h5>
+                        <p class="card-text">₹1,079</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 - Burger -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/3.jpg" alt="Product 3" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Mushroom Melt Burger</h5>
+                        <p class="card-text">₹1,245</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 - Burger -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/4.jpg" alt="Product 4" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Beef Burger</h5>
+                        <p class="card-text">₹1,413</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 - Pizza -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/5.jpg" alt="Product 5" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Margherita Supreme Pizza</h5>
+                        <p class="card-text">₹1,818</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 6 - Pizza -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/6.jpg" alt="Product 6" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Pepperoni Extravaganza</h5>
+                        <p class="card-text">₹1,911</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 7 - Pizza -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/7.jpg" alt="Product 7" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">BBQ Chicken Pizza</h5>
+                        <p class="card-text">₹2,012</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 8 - Pizza -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/8.jpg" alt="Product 8" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Four Cheese Delight Pizza</h5>
+                        <p class="card-text">₹2,329</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 9 - Ratatoulli -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/9 - ratatoulli.jpeg" alt="Product 9" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Ratatoulli</h5>
+                        <p class="card-text">₹2,495</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 10 - Rat Food -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/10 - rat food.jpg" alt="Product 10" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Rat Food</h5>
+                        <p class="card-text">₹2,745</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 11 - Chowmein -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/11 - chowmein.jpg" alt="Product 11" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Chowmein</h5>
+                        <p class="card-text">₹2,914</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 12 - Chickun Jalfrezi -->
+            <div class="col-md-2 mb-4">
+                <div class="card product-card">
+                    <img src="./images products/12 - chickun jalfrezi.jpg" alt="Product 12" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Chickun Jalfrezi</h5>
+                        <p class="card-text">₹3,320</p>
+                        <div class="quantity-controls">
+                            <button class="minus-btn">-</button>
+                            <div class="quantity-indicator">0</div>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      
+
+  <button class="cart-button" data-bs-toggle="modal" data-bs-target="#cartModal">
+    Cart <span class="badge">0</span>
+  </button>
+
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="cart-table-body">
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-end">
+            <h5>Total: <span id="total-price">$0.00</span></h5>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <script src = "products.js"></script>
+</body>
+</html>
